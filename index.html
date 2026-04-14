@@ -3,11 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Paworld · Understand your pet, together</title>
+    <title>Paworld · Your pet has something to say</title>
     <meta
       name="description"
-      content="Paworld is an AI behavior analysis and multi-member collaboration platform for pet families. Upload a photo or video and read your pet's emotions, behaviors, and needs."
+      content="Snap a photo — Paworld's AI reads your pet's mood and writes what they're really thinking, in their own voice. Identify any animal. Share their voice anywhere."
     />
+    <meta property="og:title" content="Paworld · Your pet has something to say" />
+    <meta property="og:description" content="Snap a photo. Hear what your pet is thinking. Identify any animal. Share their voice anywhere." />
+    <meta property="og:image" content="assets/hero.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/png" href="assets/logo.png" />
     <link rel="apple-touch-icon" href="assets/logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,7 +33,8 @@
                 800: "#2b4133",
                 900: "#24362a",
               },
-              cream: "#faf7f2",
+              cream: "#FFF4E6",
+              ink: "#2D1810",
             },
             fontFamily: {
               sans: [
@@ -49,37 +55,46 @@
       html { scroll-behavior: smooth; }
       .grain {
         background-image:
-          radial-gradient(1200px 600px at 10% -10%, rgba(110,159,122,.18), transparent 60%),
+          radial-gradient(1200px 600px at 10% -10%, rgba(217,119,6,.10), transparent 60%),
           radial-gradient(900px 500px at 110% 10%, rgba(110,159,122,.10), transparent 60%);
       }
-      .paw-dot::before {
-        content: "🐾";
-        margin-right: .5rem;
-      }
-      .feature-card:hover { transform: translateY(-2px); }
       .feature-card { transition: transform .2s ease; }
+      .feature-card:hover { transform: translateY(-2px); }
+      .quote::before { content: "\201C"; font-family: Georgia, serif; font-style: italic; color: #D97706; font-size: 4rem; line-height: 0; position: relative; top: 1.2rem; margin-right: .25rem; }
       @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
       .float { animation: float 4s ease-in-out infinite; }
+      /* Raw app screenshots: subtle phone-like framing against cream background */
+      .screen-shot {
+        border-radius: 28px;
+        border: 1px solid rgba(45, 24, 16, 0.08);
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.9) inset,
+          0 12px 32px -8px rgba(45, 24, 16, 0.12),
+          0 2px 8px -2px rgba(45, 24, 16, 0.06);
+        background: #fff;
+        overflow: hidden;
+        display: block;
+      }
     </style>
   </head>
-  <body class="bg-cream text-brand-900 antialiased">
+  <body class="bg-cream text-ink antialiased">
     <!-- Nav -->
-    <header class="sticky top-0 z-40 backdrop-blur bg-cream/75 border-b border-brand-100">
+    <header class="sticky top-0 z-40 backdrop-blur bg-cream/80 border-b border-brand-100">
       <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" class="flex items-center gap-2 font-semibold text-lg">
           <img src="assets/logo.png" alt="Paworld" class="w-8 h-8 rounded-xl object-cover" />
           Paworld
         </a>
         <nav class="hidden md:flex items-center gap-8 text-sm text-brand-700">
-          <a href="#features" class="hover:text-brand-500">Features</a>
-          <a href="#how" class="hover:text-brand-500">How it works</a>
-          <a href="#family" class="hover:text-brand-500">Family</a>
+          <a href="#voice" class="hover:text-brand-500">Pet voice</a>
+          <a href="#whatsit" class="hover:text-brand-500">Whatsit</a>
+          <a href="#community" class="hover:text-brand-500">Community</a>
           <a href="#faq" class="hover:text-brand-500">FAQ</a>
         </nav>
         <a
           href="https://play.google.com/store/apps/details?id=com.getpaworld.app"
           target="_blank" rel="noopener"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-400 text-white text-sm font-medium hover:bg-brand-500"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500 text-white text-sm font-medium hover:bg-brand-600"
         >
           Get the app
         </a>
@@ -88,290 +103,241 @@
 
     <!-- Hero -->
     <section class="grain">
-      <div class="max-w-6xl mx-auto px-6 pt-20 pb-24 grid md:grid-cols-2 gap-12 items-center">
+      <div class="max-w-6xl mx-auto px-6 pt-16 md:pt-24 pb-20 grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-medium">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-brand-100 text-brand-700 text-xs font-medium">
             <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
-            AI × pet families · now live
+            Now on Google Play
           </span>
-          <h1 class="mt-5 text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
-            Understand your pet,
-            <span class="text-brand-500">together</span>
+          <h1 class="mt-5 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
+            Your pet has
+            <span class="text-brand-600">something to say.</span>
           </h1>
-          <p class="mt-6 text-lg text-brand-700 max-w-lg">
-            Snap a photo or a short video — Paworld's AI reads your pet's emotions,
-            behaviors and motivations, and turns "what's up with them today?" into a
-            shareable, replayable insight.
+          <p class="mt-6 text-lg text-brand-800/80 max-w-lg">
+            Snap a photo of your dog, cat, or any animal you meet.
+            Paworld reads their expression, decodes their mood, and writes
+            what they're really thinking — in their own voice.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a
               href="#download"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-500 text-white font-medium hover:bg-brand-600"
             >
-              Try it now
+              Get the app
               <span aria-hidden>→</span>
             </a>
             <a
-              href="#features"
+              href="#voice"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-brand-200 text-brand-700 font-medium hover:border-brand-400"
             >
-              See features
+              See how it works
             </a>
           </div>
-          <dl class="mt-10 grid grid-cols-3 gap-6 max-w-md">
-            <div>
-              <dt class="text-xs text-brand-600">Behavior signals</dt>
-              <dd class="text-2xl font-semibold">12+</dd>
-            </div>
-            <div>
-              <dt class="text-xs text-brand-600">Family sync</dt>
-              <dd class="text-2xl font-semibold">Real-time</dd>
-            </div>
-            <div>
-              <dt class="text-xs text-brand-600">Platforms</dt>
-              <dd class="text-2xl font-semibold">iOS · Android · Web</dd>
-            </div>
-          </dl>
         </div>
-        <!-- Device mockup -->
         <div class="relative">
-          <div class="float mx-auto w-[280px] md:w-[320px] aspect-[9/19] rounded-[2.5rem] bg-brand-900 p-3 shadow-2xl shadow-brand-900/30">
-            <div class="h-full w-full rounded-[2rem] bg-cream overflow-hidden relative">
-              <div class="absolute top-0 inset-x-0 h-6 flex justify-center items-end">
-                <div class="w-24 h-4 rounded-b-2xl bg-brand-900"></div>
-              </div>
-              <div class="pt-10 px-5">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-full bg-brand-200 grid place-items-center text-xl">🐶</div>
-                  <div>
-                    <div class="text-sm font-semibold">Biscuit · Today 2:02 PM</div>
-                    <div class="text-[11px] text-brand-600">Golden Retriever · 2 yrs</div>
-                  </div>
-                </div>
-                <div class="mt-4 aspect-[4/3] rounded-2xl bg-gradient-to-br from-brand-200 to-brand-400 grid place-items-center text-5xl">
-                  🐕
-                </div>
-                <div class="mt-4 space-y-2">
-                  <div class="p-3 rounded-xl bg-white border border-brand-100">
-                    <div class="text-[10px] text-brand-500 uppercase tracking-wider">Emotion</div>
-                    <div class="text-sm font-medium">Excited · Hopeful · Mildly anxious</div>
-                  </div>
-                  <div class="p-3 rounded-xl bg-white border border-brand-100">
-                    <div class="text-[10px] text-brand-500 uppercase tracking-wider">Motivation</div>
-                    <div class="text-sm">Wants a walk — spotted you picking up the leash.</div>
-                  </div>
-                  <div class="p-3 rounded-xl bg-brand-400 text-white">
-                    <div class="text-[10px] uppercase tracking-wider opacity-75">Suggestion</div>
-                    <div class="text-sm">A 10-minute walk should do the trick.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="absolute -left-4 top-10 hidden md:flex px-3 py-2 rounded-full bg-white shadow-md text-xs items-center gap-2">
-            <span>✨</span> AI analysis ready
-          </div>
-          <div class="absolute -right-4 bottom-16 hidden md:flex px-3 py-2 rounded-full bg-white shadow-md text-xs items-center gap-2">
-            <span>👨‍👩‍👧</span> Family synced
-          </div>
+          <img
+            src="assets/screen-1.png"
+            alt="Your pet has something to say"
+            class="screen-shot float mx-auto w-[300px] md:w-[400px]"
+          />
         </div>
       </div>
     </section>
 
-    <!-- Features -->
-    <section id="features" class="py-24 bg-white border-y border-brand-100">
+    <!-- Pet Voice showcase -->
+    <section id="voice" class="py-24 bg-white border-y border-brand-100">
       <div class="max-w-6xl mx-auto px-6">
         <div class="max-w-2xl">
-          <h2 class="text-3xl md:text-4xl font-bold">Turn every moment into an insight you can explain</h2>
+          <div class="text-xs font-semibold text-brand-500 uppercase tracking-widest">The pet voice</div>
+          <h2 class="mt-3 text-3xl md:text-4xl font-bold">Read their mood, not just their breed.</h2>
           <p class="mt-4 text-brand-700">
-            From emotion recognition to family collaboration, Paworld turns
-            "raising a pet" from a black box into something measurable and shareable.
+            Every analysis ends with a pet voice — a short line in your pet's
+            own voice, shaped by their posture, expression, and context.
+            It's not pulled from a list. Every photo generates its own.
           </p>
         </div>
-        <div class="mt-14 grid md:grid-cols-3 gap-6">
-          <div class="feature-card p-6 rounded-2xl bg-cream border border-brand-100">
-            <div class="w-10 h-10 rounded-xl bg-brand-400 text-white grid place-items-center">🧠</div>
-            <h3 class="mt-4 font-semibold text-lg">AI behavior analysis</h3>
-            <p class="mt-2 text-sm text-brand-700">
-              Upload a photo or video. AI identifies emotions, body language and
-              motivation, and returns a structured report.
-            </p>
+
+        <div class="mt-14 grid md:grid-cols-2 gap-6 items-center">
+          <div>
+            <img
+              src="assets/screen-2.png"
+              alt="Paworld analysis: summary, pet voice, and traits"
+              class="screen-shot w-full max-w-sm mx-auto"
+            />
           </div>
-          <div class="feature-card p-6 rounded-2xl bg-cream border border-brand-100">
-            <div class="w-10 h-10 rounded-xl bg-brand-400 text-white grid place-items-center">👨‍👩‍👧</div>
-            <h3 class="mt-4 font-semibold text-lg">Family collaboration</h3>
-            <p class="mt-2 text-sm text-brand-700">
-              Invite partners, parents or roommates to co-manage your pet's profile
-              with clear roles and permissions.
-            </p>
-          </div>
-          <div class="feature-card p-6 rounded-2xl bg-cream border border-brand-100">
-            <div class="w-10 h-10 rounded-xl bg-brand-400 text-white grid place-items-center">📅</div>
-            <h3 class="mt-4 font-semibold text-lg">Pet timeline</h3>
-            <p class="mt-2 text-sm text-brand-700">
-              Photos, videos and past analyses automatically archived by date —
-              your pet's full story in one place.
-            </p>
-          </div>
-          <div class="feature-card p-6 rounded-2xl bg-cream border border-brand-100">
-            <div class="w-10 h-10 rounded-xl bg-brand-400 text-white grid place-items-center">🔍</div>
-            <h3 class="mt-4 font-semibold text-lg">Breed & identity recognition</h3>
-            <p class="mt-2 text-sm text-brand-700">
-              Detects breed and biological traits so recommendations are tuned
-              to your specific pet.
-            </p>
-          </div>
-          <div class="feature-card p-6 rounded-2xl bg-cream border border-brand-100">
-            <div class="w-10 h-10 rounded-xl bg-brand-400 text-white grid place-items-center">🎬</div>
-            <h3 class="mt-4 font-semibold text-lg">Discover community</h3>
-            <p class="mt-2 text-sm text-brand-700">
-              A full-screen vertical feed of pet moments — learn from other owners
-              and share your own insights.
-            </p>
-          </div>
-          <div class="feature-card p-6 rounded-2xl bg-cream border border-brand-100">
-            <div class="w-10 h-10 rounded-xl bg-brand-400 text-white grid place-items-center">☁️</div>
-            <h3 class="mt-4 font-semibold text-lg">Cross-device sync</h3>
-            <p class="mt-2 text-sm text-brand-700">
-              iOS, Android and Web stay in sync in real time. Every family member
-              sees the same profile.
-            </p>
+          <div class="space-y-6">
+            <div class="p-6 rounded-2xl bg-cream border border-brand-100">
+              <div class="quote text-xl font-medium leading-snug">
+                Just chilling here, watching the world go by. What's over there?
+              </div>
+              <div class="mt-4 flex items-center gap-2 text-xs text-brand-600">
+                <span class="inline-block px-2 py-0.5 rounded-full bg-white border border-brand-100">Coffee · Cavapool</span>
+                <span>calm, inquisitive</span>
+              </div>
+            </div>
+            <div class="p-6 rounded-2xl bg-cream border border-brand-100">
+              <div class="quote text-xl font-medium leading-snug">
+                I'm on a mission, slowly exploring my domain.
+              </div>
+              <div class="mt-4 flex items-center gap-2 text-xs text-brand-600">
+                <span class="inline-block px-2 py-0.5 rounded-full bg-white border border-brand-100">Tuna · British Shorthair</span>
+                <span>focused, bold</span>
+              </div>
+            </div>
+            <div class="p-6 rounded-2xl bg-brand-500 text-white">
+              <div class="quote text-xl font-medium leading-snug opacity-95">
+                I like to make biscuits on my favourite humans.
+              </div>
+              <div class="mt-4 flex items-center gap-2 text-xs opacity-80">
+                <span class="inline-block px-2 py-0.5 rounded-full bg-white/15">Coconut · Maine Coon</span>
+                <span>content, affectionate</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- How it works -->
-    <section id="how" class="py-24">
-      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        <div class="order-2 md:order-1 grid grid-cols-2 gap-4">
-          <div class="col-span-2 p-6 rounded-2xl bg-brand-500 text-white">
-            <div class="text-xs opacity-70 uppercase tracking-widest">Step 01</div>
-            <div class="mt-2 font-semibold text-lg">Snap a photo or short video</div>
-            <p class="mt-1 text-sm opacity-90">Your phone is all you need — no special gear.</p>
-          </div>
-          <div class="p-6 rounded-2xl bg-white border border-brand-100">
-            <div class="text-xs text-brand-500 uppercase tracking-widest">Step 02</div>
-            <div class="mt-2 font-semibold">AI reads the scene</div>
-            <p class="mt-1 text-sm text-brand-700">Emotions, actions and body-language cues.</p>
-          </div>
-          <div class="p-6 rounded-2xl bg-white border border-brand-100">
-            <div class="text-xs text-brand-500 uppercase tracking-widest">Step 03</div>
-            <div class="mt-2 font-semibold">Get a structured insight</div>
-            <p class="mt-1 text-sm text-brand-700">A readable report with evidence clips.</p>
-          </div>
-          <div class="col-span-2 p-6 rounded-2xl bg-brand-100">
-            <div class="text-xs text-brand-700 uppercase tracking-widest">Step 04</div>
-            <div class="mt-2 font-semibold">Share with family or the community</div>
-            <p class="mt-1 text-sm text-brand-700">Sync to your family space, or post it to Discover.</p>
-          </div>
+    <!-- Whatsit -->
+    <section id="whatsit" class="py-24">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <img
+            src="assets/screen-3.png"
+            alt="Whatsit: identify any animal in seconds"
+            class="screen-shot w-full max-w-sm mx-auto"
+          />
         </div>
         <div class="order-1 md:order-2">
-          <h2 class="text-3xl md:text-4xl font-bold">Four steps into their world</h2>
+          <div class="text-xs font-semibold text-brand-500 uppercase tracking-widest">Whatsit</div>
+          <h2 class="mt-3 text-3xl md:text-4xl font-bold">Know any animal in seconds.</h2>
           <p class="mt-4 text-brand-700">
-            Paworld hides the behavior science, vision models and collaboration tools
-            behind a simple flow — you just press the shutter, we handle the rest.
+            Stray cat in the park? A curious bird on the walk home? A dog you
+            can't quite place the breed of? Snap it — Paworld names the
+            species, breed, confidence, and distinctive traits.
           </p>
-          <ul class="mt-6 space-y-3 text-brand-700">
-            <li class="paw-dot">Emotion, motivation, behavior, body language — multi-dimensional</li>
-            <li class="paw-dot">Video evidence clips — every conclusion is reviewable</li>
-            <li class="paw-dot">Privacy-first — you decide what stays private and what to share</li>
+          <ul class="mt-6 space-y-3 text-brand-800/80">
+            <li class="flex gap-3"><span class="text-brand-500">•</span>Works on dogs, cats, birds, reptiles, and wildlife</li>
+            <li class="flex gap-3"><span class="text-brand-500">•</span>Shows confidence score and alternative breeds</li>
+            <li class="flex gap-3"><span class="text-brand-500">•</span>Identify from camera or gallery — either works</li>
+            <li class="flex gap-3"><span class="text-brand-500">•</span>Every identification is saved to your history</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Family -->
-    <section id="family" class="py-24 bg-brand-500 text-white">
+    <!-- One pet, countless stories -->
+    <section class="py-24 bg-white border-y border-brand-100">
       <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl md:text-4xl font-bold">One pet, the whole family</h2>
-          <p class="mt-4 text-white/80 max-w-lg">
-            Invite your partner, parents or roommates into a shared family space.
-            Meals, walks, meds, check-ups — everyone sees who did what.
+          <div class="text-xs font-semibold text-brand-500 uppercase tracking-widest">Pet profile</div>
+          <h2 class="mt-3 text-3xl md:text-4xl font-bold">One pet, countless stories.</h2>
+          <p class="mt-4 text-brand-700">
+            Every photo you take becomes a page in their voice diary. Look
+            back months later and relive what they were thinking — a full
+            archive of their mood, their moments, their voice.
           </p>
-          <div class="mt-8 grid grid-cols-2 gap-4 max-w-md">
-            <div class="p-4 rounded-xl bg-white/10 border border-white/15">
-              <div class="text-2xl">🔐</div>
-              <div class="mt-2 font-medium">Role-based access</div>
-              <div class="text-xs text-white/70 mt-1">Owner · Family · Guest</div>
-            </div>
-            <div class="p-4 rounded-xl bg-white/10 border border-white/15">
-              <div class="text-2xl">✉️</div>
-              <div class="mt-2 font-medium">Invite links</div>
-              <div class="text-xs text-white/70 mt-1">Send a link or scan a QR code</div>
-            </div>
-            <div class="p-4 rounded-xl bg-white/10 border border-white/15">
-              <div class="text-2xl">🔔</div>
-              <div class="mt-2 font-medium">Live notifications</div>
-              <div class="text-xs text-white/70 mt-1">Every update reaches everyone</div>
-            </div>
-            <div class="p-4 rounded-xl bg-white/10 border border-white/15">
-              <div class="text-2xl">📂</div>
-              <div class="mt-2 font-medium">Shared records</div>
-              <div class="text-xs text-white/70 mt-1">Health, vaccines, behavior history</div>
-            </div>
-          </div>
+          <ul class="mt-6 space-y-3 text-brand-800/80">
+            <li class="flex gap-3"><span class="text-brand-500">•</span>Timeline of every analysis, searchable by mood</li>
+            <li class="flex gap-3"><span class="text-brand-500">•</span>Photos and short videos both analyzed</li>
+            <li class="flex gap-3"><span class="text-brand-500">•</span>Invite family to co-manage and see every update</li>
+          </ul>
         </div>
-        <div class="relative">
-          <div class="p-6 rounded-3xl bg-white/10 border border-white/20 backdrop-blur">
-            <div class="flex items-center gap-3">
-              <div class="flex -space-x-2">
-                <div class="w-9 h-9 rounded-full bg-brand-200 border-2 border-brand-500 grid place-items-center text-brand-900">M</div>
-                <div class="w-9 h-9 rounded-full bg-brand-300 border-2 border-brand-500 grid place-items-center text-brand-900">D</div>
-                <div class="w-9 h-9 rounded-full bg-brand-100 border-2 border-brand-500 grid place-items-center text-brand-900">Me</div>
-              </div>
-              <div class="text-sm">The Biscuit Family · 3 members</div>
-            </div>
-            <ul class="mt-6 space-y-3 text-sm">
-              <li class="flex items-center justify-between p-3 rounded-xl bg-white/10">
-                <span>🍚 Mom finished the evening feeding</span>
-                <span class="text-white/60">5 min ago</span>
-              </li>
-              <li class="flex items-center justify-between p-3 rounded-xl bg-white/10">
-                <span>🚶 Dad walked Biscuit for 25 minutes</span>
-                <span class="text-white/60">1 hr ago</span>
-              </li>
-              <li class="flex items-center justify-between p-3 rounded-xl bg-white/10">
-                <span>🧠 You analyzed a video · mood looks good</span>
-                <span class="text-white/60">Today 2:02 PM</span>
-              </li>
-            </ul>
+        <div>
+          <img
+            src="assets/screen-4.png"
+            alt="Pet profile with a timeline of moments"
+            class="screen-shot w-full max-w-sm mx-auto"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section id="community" class="py-24">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <img
+            src="assets/screen-5.png"
+            alt="A community of pets that can talk"
+            class="screen-shot w-full max-w-sm mx-auto"
+          />
+        </div>
+        <div class="order-1 md:order-2">
+          <div class="text-xs font-semibold text-brand-500 uppercase tracking-widest">The feed</div>
+          <h2 class="mt-3 text-3xl md:text-4xl font-bold">A community that listens back.</h2>
+          <p class="mt-4 text-brand-700">
+            A whole feed of real pets telling real stories. Like, comment,
+            save, follow — meet the people who listen to their pets the
+            way you do.
+          </p>
+          <ul class="mt-6 space-y-3 text-brand-800/80">
+            <li class="flex gap-3"><span class="text-brand-500">•</span>Browse pets by species, mood, or breed</li>
+            <li class="flex gap-3"><span class="text-brand-500">•</span>Follow your favourites and build a personal feed</li>
+            <li class="flex gap-3"><span class="text-brand-500">•</span>Share any pet voice as a branded card — made for Instagram, TikTok, and WeChat</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="py-24 bg-brand-500 text-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold">Four steps into their world.</h2>
+          <p class="mt-4 text-white/80">
+            Paworld hides the vision models and behavior science behind a
+            simple flow. You press the shutter; we handle the rest.
+          </p>
+        </div>
+        <div class="mt-14 grid md:grid-cols-4 gap-4">
+          <div class="p-6 rounded-2xl bg-white/10 border border-white/15">
+            <div class="text-xs text-white/60 uppercase tracking-widest">Step 01</div>
+            <div class="mt-2 font-semibold text-lg">Snap</div>
+            <p class="mt-2 text-sm text-white/80">A photo or a short video. No special gear.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/10 border border-white/15">
+            <div class="text-xs text-white/60 uppercase tracking-widest">Step 02</div>
+            <div class="mt-2 font-semibold text-lg">Analyze</div>
+            <p class="mt-2 text-sm text-white/80">AI reads the expression, posture, and context.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/10 border border-white/15">
+            <div class="text-xs text-white/60 uppercase tracking-widest">Step 03</div>
+            <div class="mt-2 font-semibold text-lg">Hear</div>
+            <p class="mt-2 text-sm text-white/80">Get a short line in your pet's own voice.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/10 border border-white/15">
+            <div class="text-xs text-white/60 uppercase tracking-widest">Step 04</div>
+            <div class="mt-2 font-semibold text-lg">Share</div>
+            <p class="mt-2 text-sm text-white/80">As a branded card — or keep it just for family.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Download / CTA -->
+    <!-- Download -->
     <section id="download" class="py-24">
       <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-5xl font-bold">Start understanding them a little better today</h2>
+        <h2 class="text-3xl md:text-5xl font-bold">Meet your pet, one photo at a time.</h2>
         <p class="mt-5 text-brand-700 max-w-xl mx-auto">
-          Paworld is live on iOS, Android and the Web. Sign up free and start your
-          pet's first AI profile in minutes.
+          10 free analyses every month. No card required to start.
+          Upgrade when you want more.
         </p>
         <div class="mt-10 flex flex-wrap justify-center gap-3">
-          <span class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-brand-900/60 text-white cursor-not-allowed" aria-disabled="true">
-            <span class="text-2xl"></span>
-            <span class="text-left leading-tight">
-              <span class="block text-[10px] opacity-70">App Store</span>
-              <span class="block font-semibold">Coming soon</span>
-            </span>
-          </span>
-          <a href="https://play.google.com/store/apps/details?id=com.getpaworld.app" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-brand-900 text-white hover:bg-brand-700">
+          <a href="https://play.google.com/store/apps/details?id=com.getpaworld.app" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-ink text-white hover:bg-brand-800">
             <span class="text-2xl">▶</span>
             <span class="text-left leading-tight">
               <span class="block text-[10px] opacity-70">GET IT ON</span>
               <span class="block font-semibold">Google Play</span>
             </span>
           </a>
-          <a href="https://getpaworld.com" class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-brand-400 text-white hover:bg-brand-500">
-            <span class="text-2xl">🌐</span>
+          <span class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-brand-900/40 text-white cursor-not-allowed" aria-disabled="true">
+            <span class="text-2xl"></span>
             <span class="text-left leading-tight">
-              <span class="block text-[10px] opacity-80">Open the web app</span>
-              <span class="block font-semibold">getpaworld.com</span>
+              <span class="block text-[10px] opacity-70">App Store</span>
+              <span class="block font-semibold">Coming soon</span>
             </span>
-          </a>
+          </span>
         </div>
       </div>
     </section>
@@ -383,30 +349,48 @@
         <div class="mt-12 divide-y divide-brand-100">
           <details class="py-5 group">
             <summary class="cursor-pointer flex justify-between items-center font-medium">
-              Which pets does Paworld support?
-              <span class="text-brand-500 group-open:rotate-45 transition">+</span>
-            </summary>
-            <p class="mt-3 text-brand-700 text-sm">We currently cover dogs and cats, with support for other small pets rolling out over time.</p>
-          </details>
-          <details class="py-5 group">
-            <summary class="cursor-pointer flex justify-between items-center font-medium">
-              How reliable are the AI results?
+              What pets does Paworld work with?
               <span class="text-brand-500 group-open:rotate-45 transition">+</span>
             </summary>
             <p class="mt-3 text-brand-700 text-sm">
-              We provide reference insights based on visual cues and behavior science,
-              with video evidence clips so you can judge for yourself. For medical
+              Dogs and cats are our strongest — that's where the pet voice
+              shines. Whatsit also identifies birds, reptiles, and wildlife,
+              so you can ID animals you meet on walks and hikes too.
+            </p>
+          </details>
+          <details class="py-5 group">
+            <summary class="cursor-pointer flex justify-between items-center font-medium">
+              Is the pet voice made up?
+              <span class="text-brand-500 group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-3 text-brand-700 text-sm">
+              Every voice is generated for your specific photo — from your
+              pet's posture, facial expression, and context in frame. It's
+              not a random pick from a library. Two photos of the same pet
+              won't produce the same voice.
+            </p>
+          </details>
+          <details class="py-5 group">
+            <summary class="cursor-pointer flex justify-between items-center font-medium">
+              How reliable are the mood results?
+              <span class="text-brand-500 group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-3 text-brand-700 text-sm">
+              Our analyses reflect visual cues and behavior science, and we
+              show the reasoning so you can judge for yourself. For medical
               concerns, please consult a qualified veterinarian.
             </p>
           </details>
           <details class="py-5 group">
             <summary class="cursor-pointer flex justify-between items-center font-medium">
-              Are my photos and videos safe?
+              Are my photos private?
               <span class="text-brand-500 group-open:rotate-45 transition">+</span>
             </summary>
             <p class="mt-3 text-brand-700 text-sm">
-              Everything is private by default and only visible to family members you invite.
-              You can choose to publish any individual insight to the Discover feed.
+              Everything is private by default — only you and the family
+              members you invite can see your pet's profile. You choose
+              whether to publish any individual moment to the community feed.
+              You can export or delete your account at any time.
             </p>
           </details>
           <details class="py-5 group">
@@ -415,8 +399,8 @@
               <span class="text-brand-500 group-open:rotate-45 transition">+</span>
             </summary>
             <p class="mt-3 text-brand-700 text-sm">
-              A generous free tier covers everyday use; extra analysis and additional
-              family seats are available through a subscription.
+              Yes — 10 free analyses every month, no card required. Pro and
+              Max tiers unlock more if you want to go deeper.
             </p>
           </details>
         </div>
@@ -428,7 +412,7 @@
       <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row gap-6 items-center justify-between text-sm text-brand-600">
         <div class="flex items-center gap-2">
           <img src="assets/logo.png" alt="Paworld" class="w-7 h-7 rounded-lg object-cover" />
-          <span>© 2026 Paworld Labs LLC · Understand your pet, together</span>
+          <span>© 2026 Paworld Labs LLC · Your pet has something to say.</span>
         </div>
         <div class="flex gap-6">
           <a href="privacy.html" class="hover:text-brand-500">Privacy</a>
