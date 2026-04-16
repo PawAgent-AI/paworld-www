@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paworld is live — One Man Band · Paworld</title>
+    <meta
+      name="description"
+      content="Paworld 1.0 is live on the App Store. The story of building a pet-AI product solo, conducted by a team of six silicon engineers."
+    />
+    <meta property="og:title" content="Paworld is live — One Man Band" />
+    <meta property="og:description" content="One person. Six silicon engineers. A pet-AI app shipped in four months." />
+    <meta property="og:image" content="assets/logo.png" />
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <link rel="apple-touch-icon" href="assets/logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#f1f6f2", 100: "#dde9df", 200: "#bdd3c1", 300: "#95b79c",
+                400: "#6E9F7A", 500: "#567f61", 600: "#42664d", 700: "#35513e",
+                800: "#2b4133", 900: "#24362a",
+              },
+              cream: "#faf7f2",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      .grain {
+        background-image:
+          radial-gradient(1200px 600px at 10% -10%, rgba(110,159,122,.18), transparent 60%),
+          radial-gradient(900px 500px at 110% 10%, rgba(110,159,122,.10), transparent 60%);
+      }
+      .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.75rem; margin-bottom: 1rem; color: #24362a; letter-spacing: -0.01em; }
+      .prose p { color: #35513e; line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.0625rem; }
+      .prose a { color: #567f61; text-decoration: underline; text-underline-offset: 3px; }
+      .prose strong { color: #24362a; }
+      .prose em { color: #2b4133; font-style: italic; }
+      .prose blockquote { border-left: 3px solid #95b79c; padding: .35rem 0 .35rem 1.25rem; color: #35513e; font-style: italic; margin: 1.5rem 0; }
+    </style>
+  </head>
+  <body class="bg-cream text-brand-900 antialiased">
+    <header class="sticky top-0 z-40 backdrop-blur bg-cream/75 border-b border-brand-100">
+      <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 font-semibold text-lg">
+          <img src="assets/logo.png" alt="Paworld" class="w-8 h-8 rounded-xl object-cover" />
+          Paworld
+        </a>
+        <nav class="flex items-center gap-6 text-sm text-brand-700">
+          <a href="index.html" class="hover:text-brand-500">Home</a>
+          <a href="support.html" class="hover:text-brand-500">Support</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="grain">
+        <div class="max-w-3xl mx-auto px-6 pt-20 pb-12">
+          <p class="text-sm text-brand-500 uppercase tracking-widest">Launch announcement · April 2026</p>
+          <h1 class="mt-3 text-4xl md:text-6xl font-bold leading-[1.08] tracking-tight">
+            Paworld is live. <span class="text-brand-500">One Man Band.</span> 🐾
+          </h1>
+          <p class="mt-6 text-lg text-brand-700">
+            A pet-AI app, shipped solo — conducted by a team of six silicon engineers.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              href="https://apps.apple.com/us/app/paworld/id6762235775"
+              target="_blank" rel="noopener"
+              class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-brand-900 text-white hover:bg-brand-700"
+            >
+              <span class="text-2xl"></span>
+              <span class="text-left leading-tight">
+                <span class="block text-[10px] opacity-70">Download on the</span>
+                <span class="block font-semibold">App Store</span>
+              </span>
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.getpaworld.app"
+              target="_blank" rel="noopener"
+              class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-brand-900 text-white hover:bg-brand-700"
+            >
+              <span class="text-2xl">▶</span>
+              <span class="text-left leading-tight">
+                <span class="block text-[10px] opacity-70">GET IT ON</span>
+                <span class="block font-semibold">Google Play</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Body -->
+      <article class="max-w-3xl mx-auto px-6 pb-20">
+        <div class="prose">
+          <p>
+            Paworld actually shipped internally back in March. I call it my
+            <em>"third project"</em>. In early March I open-sourced
+            <a href="https://github.com/PawAgent-AI/pawagent" target="_blank" rel="noopener"><strong>PawAgent</strong></a>,
+            a pet-focused AI agent. About two weeks in it became obvious that very
+            few people are going to self-host an agent — so I decided to wrap it
+            into an app and get it into real hands.
+          </p>
+
+          <h2>One person vs. a team that raised ten million dollars</h2>
+          <p>
+            Paworld's natural comparison is <strong>Traini</strong>, a Silicon
+            Valley pet-AI company that has raised roughly $10M. Since 2022 they've
+            been building vertical models for pet emotion and behavior recognition.
+            Eventually they realized small vertical models get absorbed — or
+            overtaken — by general-purpose foundation models, and they pivoted to a
+            smart-collar hardware play. In a sense, a forced move.
+          </p>
+          <p>
+            Paworld goes the opposite direction. As an AI agent, it leans all the way
+            into frontier foundation models: recognition quality rides the curve of
+            the underlying model. Today it runs on <strong>Gemini</strong> (best
+            multimodal at the moment); tomorrow it can swap to whatever is strongest.
+            Don't reinvent the wheel — stand on giants' shoulders.
+          </p>
+          <p>And all of this was built by one person. Me.</p>
+
+          <h2>One person, six silicon engineers</h2>
+          <p>
+            From first idea to launch, I did not hand-write a single line of code.
+          </p>
+          <p>
+            In January I realized AI coding ability had made a step change. In
+            February I started sketching. By March there was a prototype, and in
+            April it launched. I assembled what I think of as an <em>AI engineering
+            team</em> — six silicon engineers, each with a role:
+            <strong>A — Product & GTM</strong>,
+            <strong>B — Agent</strong>,
+            <strong>C — Backend</strong>,
+            <strong>D — Mobile</strong>,
+            <strong>E — Web</strong>,
+            <strong>F — Admin</strong>.
+          </p>
+          <p>
+            I'd talk product strategy and requirements with A. A would break down
+            tasks for the others. The six of them would then execute in parallel,
+            full throttle, while I QA'd a new build every ten minutes. Absurd
+            iteration speed.
+          </p>
+          <blockquote>
+            This is what "One Man Band" looks like in 2026: one human conducting an
+            AI orchestra, and a complete product comes out the other end.
+          </blockquote>
+
+          <h2>Software is about to bloom</h2>
+          <p>
+            The significance of this goes well beyond Paworld itself. The leap in
+            AI coding means a huge class of ideas — ones that previously
+            <em>"weren't worth the engineering cost"</em> — can now be tried for
+            almost nothing. Software, and mobile apps especially, are about to have
+            a Cambrian moment. User needs will be met more thoroughly than ever, and
+            software is becoming a truly competitive market.
+          </p>
+          <p>
+            My own cadence already backs this up. January and February: projects
+            one and two (in golf). March: project three, Paworld. April: I'm
+            building project four (in automotive, shipping by end of month). May:
+            project five begins.
+          </p>
+          <p><strong>One project a month. One Man Band.</strong></p>
+
+          <h2>Come try it</h2>
+          <p>
+            Paworld 1.0 is live today on the
+            <a href="https://apps.apple.com/us/app/paworld/id6762235775" target="_blank" rel="noopener">App Store</a>
+            and
+            <a href="https://play.google.com/store/apps/details?id=com.getpaworld.app" target="_blank" rel="noopener">Google Play</a>.
+            Snap a photo of your pet and see what Paworld reads. I'd love your
+            feedback — <a href="mailto:support@getpaworld.com">support@getpaworld.com</a>. 🐶
+          </p>
+        </div>
+
+        <!-- Signature -->
+        <div class="mt-16 p-6 rounded-2xl bg-white border border-brand-100 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-brand-400 text-white grid place-items-center text-xl font-bold">J</div>
+          <div>
+            <div class="font-semibold">Jack · Founder, Paworld Labs LLC</div>
+            <div class="text-sm text-brand-600">Shipping one project a month. Talk to me at <a class="underline" href="mailto:support@getpaworld.com">support@getpaworld.com</a>.</div>
+          </div>
+        </div>
+
+        <!-- Back to home -->
+        <div class="mt-10 text-center">
+          <a href="index.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-brand-500 text-white hover:bg-brand-600">
+            ← Back to Paworld
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="py-12 bg-cream border-t border-brand-100">
+      <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row gap-6 items-center justify-between text-sm text-brand-600">
+        <div class="flex items-center gap-2">
+          <img src="assets/logo.png" alt="Paworld" class="w-7 h-7 rounded-lg object-cover" />
+          <span>© 2026 Paworld Labs LLC · Understand your pet, together</span>
+        </div>
+        <div class="flex gap-6">
+          <a href="support.html" class="hover:text-brand-500">Support</a>
+          <a href="privacy.html" class="hover:text-brand-500">Privacy</a>
+          <a href="terms.html" class="hover:text-brand-500">Terms</a>
+          <a href="mailto:support@getpaworld.com" class="hover:text-brand-500">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
