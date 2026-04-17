@@ -3,19 +3,68 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Paworld · Your pet has something to say</title>
+    <title>Paworld · AI pet translator — read your pet's mood, identify any animal</title>
     <meta
       name="description"
-      content="Snap a photo — Paworld's AI reads your pet's mood and writes what they're really thinking, in their own voice. Identify any animal. Share their voice anywhere."
+      content="Snap a photo and read what your pet is feeling. Identify any dog, cat, bird, or animal breed in seconds. Free AI pet translator on iOS and Android."
     />
-    <meta property="og:title" content="Paworld · Your pet has something to say" />
-    <meta property="og:description" content="Snap a photo. Hear what your pet is thinking. Identify any animal. Share their voice anywhere." />
-    <meta property="og:image" content="assets/hero.png" />
+    <meta name="keywords" content="pet AI, pet translator, dog emotion app, cat mood app, identify dog breed, identify cat breed, animal identifier, pet behavior AI, what is my pet thinking" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://www.getpaworld.com/" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Paworld" />
+    <meta property="og:url" content="https://www.getpaworld.com/" />
+    <meta property="og:title" content="Paworld · AI pet translator — read your pet's mood, identify any animal" />
+    <meta property="og:description" content="Snap a photo and read what your pet is feeling. Identify any dog, cat, bird, or animal in seconds. Free on iOS and Android." />
+    <meta property="og:image" content="https://www.getpaworld.com/assets/hero.png" />
+    <meta property="og:image:alt" content="Paworld app preview" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Paworld · AI pet translator" />
+    <meta name="twitter:description" content="Snap a photo. Read your pet's mood. Identify any animal. Free on iOS and Android." />
+    <meta name="twitter:image" content="https://www.getpaworld.com/assets/hero.png" />
+
+    <!-- Apple Smart App Banner (shown on Safari iOS) -->
+    <meta name="apple-itunes-app" content="app-id=6762235775" />
+
+    <!-- Icons -->
     <link rel="icon" type="image/png" href="assets/logo.png" />
     <link rel="apple-touch-icon" href="assets/logo.png" />
+
+    <!-- JSON-LD: MobileApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Paworld",
+      "operatingSystem": "iOS, ANDROID",
+      "applicationCategory": "LifestyleApplication",
+      "description": "AI pet translator. Snap a photo to read your pet's emotions, body language, and motivation, or identify any dog, cat, or animal breed.",
+      "url": "https://www.getpaworld.com/",
+      "image": "https://www.getpaworld.com/assets/hero.png",
+      "author": { "@type": "Organization", "name": "Paworld Labs LLC" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "downloadUrl": [
+        "https://apps.apple.com/us/app/paworld/id6762235775",
+        "https://play.google.com/store/apps/details?id=com.getpaworld.app"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Paworld Labs LLC",
+      "url": "https://www.getpaworld.com/",
+      "logo": "https://www.getpaworld.com/assets/logo.png",
+      "email": "support@getpaworld.com"
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="assets/analytics.js"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -92,9 +141,10 @@
           <a href="#faq" class="hover:text-brand-500">FAQ</a>
         </nav>
         <a
-          href="https://play.google.com/store/apps/details?id=com.getpaworld.app"
+          href="https://play.google.com/store/apps/details?id=com.getpaworld.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dnav%26utm_campaign%3Dlaunch"
           target="_blank" rel="noopener"
           class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500 text-white text-sm font-medium hover:bg-brand-600"
+          data-download="google_play" data-location="nav"
         >
           Get the app
         </a>
@@ -105,7 +155,7 @@
     <section class="grain">
       <div class="max-w-6xl mx-auto px-6 pt-16 md:pt-24 pb-20 grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <a href="launch.html" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-brand-100 text-brand-700 text-xs font-medium hover:border-brand-400">
+          <a href="blog/launch.html" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-brand-100 text-brand-700 text-xs font-medium hover:border-brand-400">
             <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
             Paworld 1.0 is live · Read the launch story →
           </a>
@@ -324,14 +374,14 @@
           Upgrade when you want more.
         </p>
         <div class="mt-10 flex flex-wrap justify-center gap-3">
-          <a href="https://play.google.com/store/apps/details?id=com.getpaworld.app" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-ink text-white hover:bg-brand-800">
+          <a href="https://play.google.com/store/apps/details?id=com.getpaworld.app&referrer=utm_source%3Dwebsite%26utm_medium%3Ddownload%26utm_campaign%3Dlaunch" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-ink text-white hover:bg-brand-800" data-download="google_play" data-location="download">
             <span class="text-2xl">▶</span>
             <span class="text-left leading-tight">
               <span class="block text-[10px] opacity-70">GET IT ON</span>
               <span class="block font-semibold">Google Play</span>
             </span>
           </a>
-          <a href="https://apps.apple.com/us/app/paworld/id6762235775" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-brand-900 text-white hover:bg-brand-700">
+          <a href="https://apps.apple.com/us/app/paworld/id6762235775?utm_source=website&utm_medium=download&utm_campaign=launch" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-brand-900 text-white hover:bg-brand-700" data-download="app_store" data-location="download">
             <span class="text-2xl"></span>
             <span class="text-left leading-tight">
               <span class="block text-[10px] opacity-70">Download on the</span>
@@ -415,7 +465,7 @@
           <span>© 2026 Paworld Labs LLC · Your pet has something to say.</span>
         </div>
         <div class="flex gap-6">
-          <a href="launch.html" class="hover:text-brand-500">Launch story</a>
+          <a href="blog/" class="hover:text-brand-500">Blog</a>
           <a href="support.html" class="hover:text-brand-500">Support</a>
           <a href="privacy.html" class="hover:text-brand-500">Privacy</a>
           <a href="terms.html" class="hover:text-brand-500">Terms</a>
