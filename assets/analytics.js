@@ -1,5 +1,5 @@
 (function () {
-  var GA_ID = "G-NYM2PNFVJX";
+  var GA_ID = "G-HG81NR15ZB";
   var s = document.createElement("script");
   s.async = true;
   s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
