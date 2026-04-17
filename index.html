@@ -63,43 +63,8 @@
       "email": "support@getpaworld.com"
     }
     </script>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin><link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin><script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin><link rel="stylesheet" href="assets/tailwind.css">
     <script defer src="assets/analytics.js"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                50: "#f1f6f2",
-                100: "#dde9df",
-                200: "#bdd3c1",
-                300: "#95b79c",
-                400: "#6E9F7A",
-                500: "#567f61",
-                600: "#42664d",
-                700: "#35513e",
-                800: "#2b4133",
-                900: "#24362a",
-              },
-              cream: "#FFF4E6",
-              ink: "#2D1810",
-            },
-            fontFamily: {
-              sans: [
-                "ui-sans-serif",
-                "system-ui",
-                "-apple-system",
-                "Inter",
-                "Segoe UI",
-                "Helvetica Neue",
-                "sans-serif",
-              ],
-            },
-          },
-        },
-      };
-    </script>
     <style>
       html { scroll-behavior: smooth; }
       .grain {
@@ -126,9 +91,9 @@
       }
     </style>
   </head>
-  <body class="bg-cream text-ink antialiased">
+  <body class="bg-cream-warm text-ink antialiased">
     <!-- Nav -->
-    <header class="sticky top-0 z-40 backdrop-blur bg-cream/80 border-b border-brand-100">
+    <header class="sticky top-0 z-40 backdrop-blur bg-cream-warm/80 border-b border-brand-100">
       <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" class="flex items-center gap-2 font-semibold text-lg">
           <img src="assets/logo.webp" alt="Paworld" class="w-8 h-8 rounded-xl object-cover" />
@@ -216,7 +181,7 @@
             />
           </div>
           <div class="space-y-6">
-            <div class="p-6 rounded-2xl bg-cream border border-brand-100">
+            <div class="p-6 rounded-2xl bg-cream-warm border border-brand-100">
               <div class="quote text-xl font-medium leading-snug">
                 Just chilling here, watching the world go by. What's over there?
               </div>
@@ -225,7 +190,7 @@
                 <span>calm, inquisitive</span>
               </div>
             </div>
-            <div class="p-6 rounded-2xl bg-cream border border-brand-100">
+            <div class="p-6 rounded-2xl bg-cream-warm border border-brand-100">
               <div class="quote text-xl font-medium leading-snug">
                 I'm on a mission, slowly exploring my domain.
               </div>
@@ -458,7 +423,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-cream">
+    <footer class="py-12 bg-cream-warm">
       <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row gap-6 items-center justify-between text-sm text-brand-600">
         <div class="flex items-center gap-2">
           <img src="assets/logo.webp" alt="Paworld" class="w-7 h-7 rounded-lg object-cover" />
