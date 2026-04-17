@@ -30,6 +30,9 @@
     <!-- Apple Smart App Banner (shown on Safari iOS) -->
     <meta name="apple-itunes-app" content="app-id=6762235775" />
 
+    <!-- LCP preload: hero screenshot -->
+    <link rel="preload" as="image" href="assets/screen-1.webp" fetchpriority="high" />
+
     <!-- Icons -->
     <link rel="icon" type="image/png" href="assets/logo.png" />
     <link rel="apple-touch-icon" href="assets/logo.png" />
@@ -149,7 +152,7 @@
         </div>
         <div class="relative">
           <img
-            src="assets/screen-1.webp" loading="lazy" decoding="async"
+            src="assets/screen-1.webp" fetchpriority="high" decoding="async"
             alt="Your pet has something to say"
             class="screen-shot float mx-auto w-[300px] md:w-[400px]"
           />
