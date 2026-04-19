@@ -25,10 +25,10 @@ module.exports = {
       },
       fontFamily: {
         sans: [
+          "Inter",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
-          "Inter",
           "Segoe UI",
           "Helvetica Neue",
           "sans-serif",
